@@ -1,0 +1,15 @@
+{
+    "bid": 1,
+    "mid": 3,
+    "title":"疯狂雪地",
+    "levels": [
+        {
+            "total_level": 25,
+            "gift": []
+        },
+        {
+            "total_level": 20,
+            "gift": []
+        }
+    ]
+}
