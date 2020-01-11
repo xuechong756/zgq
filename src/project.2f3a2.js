@@ -703,7 +703,7 @@ require = function a(c, l, s) {
                 SDK().getScore("isFirst", function(e) {
                     0 == e || null == e || null == e ? SDK().setScore({
                         isFirst: 1
-                    }) : window.gameFirst && (this.goShareView.active = !0,
+                    }) : window.gameFirst && (
                     window.gameFirst = !1)
                 }
                 .bind(this))
@@ -830,8 +830,7 @@ require = function a(c, l, s) {
                         gameApplication.DataAnalytics.levelBegin(e),
                         this.isMemu = !0,
                         window.gameTimes = window.gameTimes + 1,
-                        10 == window.gameTimes && (window.gameTimes = 0,
-                        this.goShareView.active = !0);
+                        10 == window.gameTimes && (window.gameTimes = 0);
                         var t = {};
                         if (t.playingMid = mid,
                         t.playingLid = lid,
@@ -1152,7 +1151,7 @@ require = function a(c, l, s) {
                 var t = 0;
                 t = this.turnBackCount <= 0 ? 3 : this.turnBackCount <= 6 ? 2 : 1,
                 this.endView_title.string = 3 == t ? "太棒啦" : 2 == t ? "厉害" : "一般",
-                this.endView_text.string = "找到女朋友只用了 " + this.moved + " 步",
+                this.endView_text.string = "找到出口只用了 " + this.moved + " 步",
                 SDK().getScore(bid + "_" + mid + "_" + lid, function(e) {
                     if (e < 1) {
                         var t = {};
@@ -1619,11 +1618,12 @@ require = function a(c, l, s) {
                 .bind(this))
             },
             goShare: function() {
-                this.goShareView.active = !1,
+				//埋点 分享
+                /*this.goShareView.active = !1,
                 SDK().getScore("all", function(e) {
                     SDK().share(e, null)
                 }
-                .bind(this))
+                .bind(this))*/
             },
             helpBtnShake: function() {
                 this.helpBtn.getComponent("AnimFunc").shake()
