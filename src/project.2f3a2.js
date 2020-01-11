@@ -251,7 +251,14 @@ require = function a(c, l, s) {
                 cc.game.on(cc.game.EVENT_SHOW, function() {
                     c.gameHideAndShow(!1),
                     cc.audioEngine.resumeAll()
-                })
+                });
+				
+				//埋点 推荐
+				var PopGame = cc.find("PopGame", this.node);
+				PopGame.removeAllChildren();
+				
+				
+				//console.log(this.node);
             },
 			autoAdapteScreen:function(){
 				// 适配解决方案
@@ -662,7 +669,9 @@ require = function a(c, l, s) {
             },
             onLoad: function() {
 				this.autoAdapteScreen();
-                window.gameView = this
+                window.gameView = this;
+				
+				console.log(this.menuView);
             },
 			autoAdapteScreen:function(){
 				// 适配解决方案
